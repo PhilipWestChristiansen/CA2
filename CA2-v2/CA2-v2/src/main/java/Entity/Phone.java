@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ca2.v2.Entity;
+package Entity;
 
 import javax.persistence.Id;
 
@@ -11,11 +11,12 @@ import javax.persistence.Id;
  *
  * @author pwc
  */
-public class CityInfo {
+public class Phone {
     
     @Id
     int id;
     
-    String zipcode;
-    String city;
+    int number;
+    String description;
+    
 }

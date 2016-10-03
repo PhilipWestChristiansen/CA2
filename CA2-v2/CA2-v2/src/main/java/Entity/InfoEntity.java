@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ca2.v2.Entity;
+package Entity;
+
+import javax.persistence.Id;
 
 /**
  *
  * @author pwc
  */
-public class Person {
+public class InfoEntity {
     
+    @Id
     int id;
     
-    String firstName;
-    String lastName;
+    String email;
 }
