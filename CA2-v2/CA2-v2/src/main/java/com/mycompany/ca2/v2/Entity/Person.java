@@ -5,12 +5,17 @@
  */
 package com.mycompany.ca2.v2.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author pwc
  */
-public class Person {
+@Entity
+public class Person extends InfoEntity{
     
+    @Id
     int id;
     
     String firstName;
