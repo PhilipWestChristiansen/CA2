@@ -1,6 +1,7 @@
 package Entity;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,8 @@ public class Hobby {
     String name;
     String description;
     
-    @ManyToMany(mappedBy = "hobbies")
+    @ManyToMany(mappedBy = "hobbies", cascade = 
+        {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Person> persons;
 
     public Hobby() {

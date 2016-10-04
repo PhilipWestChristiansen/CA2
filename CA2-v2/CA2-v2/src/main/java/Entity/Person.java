@@ -6,6 +6,7 @@
 package Entity;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,8 @@ public class Person extends InfoEntity {
     String firstName;
     String lastName;
     
-    @ManyToMany
+    @ManyToMany(cascade = 
+        {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "persons")
     List<Hobby> hobbies;
     
     public Person(String firstName, String lastName){
