@@ -14,7 +14,7 @@ import javax.persistence.EntityManagerFactory;
  * @author pwc
  */
 public class personFacade {
-/*
+
     EntityManagerFactory emf;
 
     public personFacade(EntityManagerFactory emf) {
@@ -96,5 +96,4 @@ public class personFacade {
 
         return null;
     }
-*/
 }
