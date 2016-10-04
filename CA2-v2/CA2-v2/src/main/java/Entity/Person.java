@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ca2.v2.Entity;
+package Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,10 +13,11 @@ import javax.persistence.Id;
  * @author pwc
  */
 @Entity
-public class InfoEntity {
+public class Person extends InfoEntity{
     
     @Id
     int id;
     
-    String email;
+    String firstName;
+    String lastName;
 }
