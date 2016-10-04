@@ -36,7 +36,7 @@ public class Company extends InfoEntity {
     }
 
     public Company(String name, String description, String cvr, int NumEmployees, double marketValue, int id, String email) {
-        super(id, email);
+        super(email);
         this.name = name;
         this.description = description;
         this.cvr = cvr;
