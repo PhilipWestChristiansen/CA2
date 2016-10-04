@@ -13,5 +13,7 @@ Entity/Person.class
 Entity/Company_.class
 Facade/personFacade.class
 Entity/InfoEntity_.class
+Rest/RESTPerson.class
+Rest/ApplicationConfig.class
 Entity/Address.class
 Test/Populate.class

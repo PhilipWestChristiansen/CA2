@@ -11,13 +11,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author pwc
  */
 @Entity
-public class CityInfo {
+@Table(name = "CityInfo")
+public class CityInfo
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,49 +28,58 @@ public class CityInfo {
 
     String zipcode;
     String city;
-    
+
     @OneToMany
     List<Address> addresses;
 
-    public CityInfo() {
+    public CityInfo()
+    {
     }
 
-    public List<Address> getAddresses() {
+    public List<Address> getAddresses()
+    {
         return addresses;
     }
 
-    public void setAddresses(List<Address> addresses) {
+    public void setAddresses(List<Address> addresses)
+    {
         this.addresses = addresses;
     }
-    
-    public CityInfo(String zipcode, String city) {
+
+    public CityInfo(String zipcode, String city)
+    {
         this.zipcode = zipcode;
         this.city = city;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getZipcode() {
+    public String getZipcode()
+    {
         return zipcode;
     }
 
-    public void setZipcode(String zipcode) {
+    public void setZipcode(String zipcode)
+    {
         this.zipcode = zipcode;
     }
 
-    public String getCity() {
+    public String getCity()
+    {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(String city)
+    {
         this.city = city;
     }
-    
-    
+
 }

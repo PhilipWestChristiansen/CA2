@@ -11,24 +11,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  *
  * @author pwc
  */
 @Entity
+@Table(name = "Person")
 public class Person extends InfoEntity {
-    
+     
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+    
     
     String firstName;
     String lastName;
     
     @ManyToMany
     List<Hobby> hobbies;
-    
+    public Person()
+    {
+        
+    }
     public Person(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;

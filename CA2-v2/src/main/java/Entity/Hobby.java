@@ -6,9 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
-public class Hobby {
+@Table(name = "Hobby")
+public class Hobby
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,39 +19,47 @@ public class Hobby {
 
     String name;
     String description;
-    
+
     @ManyToMany(mappedBy = "hobbies")
     private List<Person> persons;
 
-    public Hobby() {
+    public Hobby()
+    {
     }
 
-    public Hobby(String name, String description) {
+    public Hobby(String name, String description)
+    {
         this.name = name;
         this.description = description;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
 

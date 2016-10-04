@@ -9,12 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author pwc
  */
 @Entity
+@Table(name = "Company")
 public class Company extends InfoEntity {
 
     @Id
@@ -26,7 +28,12 @@ public class Company extends InfoEntity {
     String cvr;
     int NumEmployees;
     double marketValue;
-
+    
+    public Company()
+    {
+        
+    }
+    
     public Company(String name, String description, String cvr, int NumEmployees, double marketValue) {
         this.name = name;
         this.description = description;

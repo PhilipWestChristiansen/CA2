@@ -5,84 +5,104 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-public class personFacade {
+public class personFacade
+{
 
     EntityManagerFactory emf;
 
-    public personFacade(EntityManagerFactory emf) {
+    public personFacade(EntityManagerFactory emf)
+    {
         this.emf = emf;
     }
 
-    public Person getPerson(int id) {
+    
+    
+    public Person getPerson(int id)
+    {
         EntityManager em = emf.createEntityManager();
 
         Person p = null;
 
-        try {
+        try
+        {
             em.getTransaction().begin();
             p = em.find(Person.class, id);
             em.getTransaction().commit();
             return p;
-        } finally {
+        } finally
+        {
             em.close();
         }
     }
 
-    public List<Person> getPersons() {
+    public List<Person> getPersons()
+    {
         EntityManager em = emf.createEntityManager();
 
         List<Person> persons = null;
 
-        try {
+        try
+        {
             em.getTransaction().begin();
             persons = em.createQuery("Select p from Person p").getResultList();
             em.getTransaction().commit();
             return persons;
-        } finally {
+        } finally
+        {
             em.close();
         }
     }
 
-    public Person addPerson(Person p) {
+    public Person addPerson(Person p)
+    {
         EntityManager em = emf.createEntityManager();
 
-        try {
+        try
+        {
             em.getTransaction().begin();
             em.persist(p);
             em.getTransaction().commit();
             return p;
-        } finally {
+        } finally
+        {
             em.close();
         }
     }
 
-    public Person deletePerson(int id) {
+    public Person deletePerson(int id)
+    {
         EntityManager em = emf.createEntityManager();
 
-        try {
+        try
+        {
             em.getTransaction().begin();
             Person p = em.find(Person.class, id);
             em.remove(p);
             em.getTransaction().commit();
             return p;
-        } finally {
+        } finally
+        {
             em.close();
         }
     }
 
-    public Person editPerson(Person pers) {
+    public Person editPerson(Person pers)
+    {
         EntityManager em = emf.createEntityManager();
 
-        try {
+        try
+        {
             em.getTransaction().begin();
             Person p = em.find(Person.class, pers.getId());
-            if (p != null) {
+            if (p != null)
+            {
                 p = pers;
                 em.merge(p);
                 em.getTransaction().commit();
                 return p;
             }
-        } finally {
+        } finally
+        {
             em.close();
         }
 

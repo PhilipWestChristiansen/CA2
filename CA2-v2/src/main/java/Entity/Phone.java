@@ -9,54 +9,62 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author pwc
  */
-
 @Entity
-public class Phone {
-    
+@Table(name = "Phone")
+public class Phone
+{
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)        
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    
+
     int number;
     String description;
 
-    public Phone() {
+    public Phone()
+    {
     }
 
-    public Phone(int number, String description) {
+    public Phone(int number, String description)
+    {
         this.number = number;
         this.description = description;
     }
-    
-    public int getId() {
+
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public int getNumber() {
+    public int getNumber()
+    {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(int number)
+    {
         this.number = number;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
-    
-    
-    
+
 }

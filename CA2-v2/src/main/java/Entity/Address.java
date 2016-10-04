@@ -11,13 +11,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author pwc
  */
 @Entity
-public class Address {
+@Table(name = "Address")
+public class Address
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,48 +28,58 @@ public class Address {
 
     String street;
     String additionalInfo;
-    
+
     @OneToMany
     List<InfoEntity> infoentities;
 
-    public Address() {
+    public Address()
+    {
     }
-    
-    public Address(String street, String additionalInfo) {
+
+    public Address(String street, String additionalInfo)
+    {
         this.street = street;
         this.additionalInfo = additionalInfo;
     }
 
-    public List<InfoEntity> getInfoentities() {
+    public List<InfoEntity> getInfoentities()
+    {
         return infoentities;
     }
 
-    public void setInfoentities(List<InfoEntity> infoentities) {
+    public void setInfoentities(List<InfoEntity> infoentities)
+    {
         this.infoentities = infoentities;
     }
-    
-    public int getId() {
+
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getStreet() {
+    public String getStreet()
+    {
         return street;
     }
 
-    public void setStreet(String street) {
+    public void setStreet(String street)
+    {
         this.street = street;
     }
 
-    public String getAdditionalInfo() {
+    public String getAdditionalInfo()
+    {
         return additionalInfo;
     }
 
-    public void setAdditionalInfo(String additionalInfo) {
+    public void setAdditionalInfo(String additionalInfo)
+    {
         this.additionalInfo = additionalInfo;
     }
-    
+
 }

@@ -11,53 +11,63 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author pwc
  */
 @Entity
-public class InfoEntity {
-    
+@Table(name = "Info")
+public class InfoEntity
+{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    
+
     String email;
-    
+
     @OneToMany
-    List <Phone> phones;
-    
-    public InfoEntity() {
+    List<Phone> phones;
+
+    public InfoEntity()
+    {
     }
 
-    public InfoEntity(String email) {
+    public InfoEntity(String email)
+    {
         this.email = email;
     }
 
-    public List<Phone> getPhones() {
+    public List<Phone> getPhones()
+    {
         return phones;
     }
 
-    public void setPhones(List<Phone> phones) {
+    public void setPhones(List<Phone> phones)
+    {
         this.phones = phones;
     }
-    
-    public int getId() {
+
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email)
+    {
         this.email = email;
     }
-    
-    
+
 }
