@@ -40,10 +40,18 @@ public class Person extends InfoEntity {
         this.hobbies = hobbies;
     }
 
-    public Person(String firstName, String lastName, List<Hobby> hobbies, int id, String email) {
-        super(id, email);
+    public Person(String firstName, String lastName, List<Hobby> hobbies, String email) {
+        super(email);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.hobbies = hobbies;
+    }
+
+    public List<Hobby> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<Hobby> hobbies) {
         this.hobbies = hobbies;
     }
     

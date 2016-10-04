@@ -31,8 +31,7 @@ public class InfoEntity {
     public InfoEntity() {
     }
 
-    public InfoEntity(int id, String email) {
-        this.id = id;
+    public InfoEntity(String email) {
         this.email = email;
     }
 
