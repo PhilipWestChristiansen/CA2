@@ -5,8 +5,12 @@
  */
 package Entity;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -16,7 +20,45 @@ import javax.persistence.Id;
 public class InfoEntity {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     
     String email;
+    
+    @OneToMany
+    List <Phone> phones;
+    
+    public InfoEntity() {
+    }
+
+    public InfoEntity(int id, String email) {
+        this.id = id;
+        this.email = email;
+    }
+
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
 }
