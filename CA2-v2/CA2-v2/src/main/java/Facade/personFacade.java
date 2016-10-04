@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Facade;
 
+import Entity.Person;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-/**
- *
- * @author pwc
- */
 public class personFacade {
 
     EntityManagerFactory emf;
@@ -21,14 +13,14 @@ public class personFacade {
         this.emf = emf;
     }
 
-    public personFacade getPerson(int id) {
+    public Person getPerson(int id) {
         EntityManager em = emf.createEntityManager();
 
-        personFacade p = null;
+        Person p = null;
 
         try {
             em.getTransaction().begin();
-            p = em.find(personFacade.class, id);
+            p = em.find(Person.class, id);
             em.getTransaction().commit();
             return p;
         } finally {
@@ -36,10 +28,10 @@ public class personFacade {
         }
     }
 
-    public List<personFacade> getPersons() {
+    public List<Person> getPersons() {
         EntityManager em = emf.createEntityManager();
 
-        List<personFacade> persons = null;
+        List<Person> persons = null;
 
         try {
             em.getTransaction().begin();
@@ -51,7 +43,7 @@ public class personFacade {
         }
     }
 
-    public personFacade addPerson(personFacade p) {
+    public Person addPerson(Person p) {
         EntityManager em = emf.createEntityManager();
 
         try {
@@ -64,12 +56,12 @@ public class personFacade {
         }
     }
 
-    public personFacade deletePerson(int id) {
+    public Person deletePerson(int id) {
         EntityManager em = emf.createEntityManager();
 
         try {
             em.getTransaction().begin();
-            personFacade p = em.find(personFacade.class, id);
+            Person p = em.find(Person.class, id);
             em.remove(p);
             em.getTransaction().commit();
             return p;
@@ -78,12 +70,12 @@ public class personFacade {
         }
     }
 
-    public personFacade editPerson(personFacade pers) {
+    public Person editPerson(Person pers) {
         EntityManager em = emf.createEntityManager();
 
         try {
             em.getTransaction().begin();
-            personFacade p = em.find(personFacade.class, pers.getId());
+            Person p = em.find(Person.class, pers.getId());
             if (p != null) {
                 p = pers;
                 em.merge(p);
